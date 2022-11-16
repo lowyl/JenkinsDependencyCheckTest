@@ -4,7 +4,8 @@ pipeline {
 		stage('Checkout SCM') {
 			steps {
 				git 'https://github.com/lowyl/JenkinsDependencyCheckTest'
-                git branch:'master', url: 'https://github.com/ScaleSec/vulnado.git'
+                git branch:'master', url: 'https://github.com/OWASP/Vulnerable-Web-
+Application.git'
 			}
 
 		}
@@ -42,4 +43,5 @@ pipeline {
 			recordIssues enabledForFailure: true, tool: sonarQube()
         }
 	}
+}
 }
